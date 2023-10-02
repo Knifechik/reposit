@@ -90,7 +90,7 @@ func devyat() {
 }
 
 func desyat() {
-	fmt.Println("Введите два числа через пробел")
+	fmt.Println("Введите два числа через пробелы")
 	var s string
 	fmt.Scan(&s)
 	var i int
