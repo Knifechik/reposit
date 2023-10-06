@@ -31,14 +31,16 @@ func (tri ReTriangle) Area() int {
 }
 
 func main() {
+	fmt.Printf("\tПервое задание\nВведите длину и ширину прямоугольника:\n")
 	var square Rectangle
 	fmt.Scan(&square.Width, &square.Height)
 	var hz Shape = square
-	fmt.Println(hz.Area())
+	fmt.Printf("Площадь прямоугольника: %v\n", fmt.Sprint(hz.Area()))
+	fmt.Printf("Введите значения для трёх сторон треугольника:\n")
 	var triangle ReTriangle
 	fmt.Scan(&triangle.odin, &triangle.dva, &triangle.tri)
 	hz = triangle
-	fmt.Println(hz.Area())
+	fmt.Printf("Площадь треугольника: %v\n", fmt.Sprint(hz.Area()))
 	Zadanie2()
 	//hz = newRentanglefn(square.Width, square.Height)
 	//fmt.Println(hz.Area())
