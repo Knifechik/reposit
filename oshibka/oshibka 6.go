@@ -1,26 +1,30 @@
 package main
 
 import (
-	"errors"
 	"fmt"
+	"log"
 )
 
-type YourError string
-
-func (hem *YourError) Error() string {
-	return fmt.Sprint("Одна ошибка и  ты ошибся")
+type CustError struct {
+	code int
+	err  string
 }
 
-var meh YourError
+func (a *CustError) Error() string {
+	return fmt.Sprintf("code: %d: err %v", a.code, a.err)
+}
+
+func req(p int, q string) error {
+	return &CustError{
+		code: p,
+		err:  q,
+	}
+}
 
 func main() {
-	a := 5
-	b := 0
-	c, err := hm(a, b)
-}
-
-func hm(a, b int) (int, error) {
-	if a != 0 || b != 0 {
-		return 0, meh
+	err := req(666, "try")
+	if err != nil {
+		log.Fatal(err)
 	}
+	fmt.Println("good")
 }
