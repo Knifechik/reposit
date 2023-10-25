@@ -24,7 +24,9 @@ func req(p int, q string) error {
 func main() {
 	err := req(666, "try")
 	if err != nil {
+		fmt.Println(&CustError{5, "oshibka"}) // разное пробую
 		log.Fatal(err)
 	}
+
 	fmt.Println("good")
 }
